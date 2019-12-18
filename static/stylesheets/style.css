@@ -436,13 +436,13 @@ p.card-location {
   width: 100vw;
   left: 0;
   z-index: -1;
-  background-image: url("/static/images/signed-out-home.jpg");
+  background-image: url("/static/images/parrot.jpg");
   background-size: cover;
   background-position: center center;
   color: #fff;
   text-align: center;
   padding: 1rem;
-  text-shadow: 0 0 8px #66757f;
+  text-shadow: 3px 5px 8px black;
 }
 
 .home-hero .btn {

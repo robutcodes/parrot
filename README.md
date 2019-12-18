@@ -1,4 +1,4 @@
-# Warbler
+# Parrot
 
 This is a Twitter-like app.
 
