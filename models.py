@@ -9,7 +9,7 @@ bcrypt = Bcrypt()
 db = SQLAlchemy()
 
 DEFAULT_USER_IMAGE = "/static/images/default-pic.png"
-DEFAULT_HEADER_IMAGE = "/static/images/warbler-hero.jpg"
+DEFAULT_HEADER_IMAGE = "/static/images/parrot_header.jpeg"
 
 class Follows(db.Model):
     """Connection of a follower <-> followed_user."""
