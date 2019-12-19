@@ -151,7 +151,6 @@ def logout():
 
     do_logout()
     return redirect('/')
-    # IMPLEMENT THIS
 
 
 ##############################################################################
@@ -448,6 +447,11 @@ def homepage():
 
     else:
         return render_template('home-anon.html')
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
 
 
 ##############################################################################
