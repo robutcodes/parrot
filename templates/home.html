@@ -50,16 +50,16 @@
           <p>{{ msg.text }}</p>
         </div>
         {% if msg.id in user_likes %}
-        <form action="/likes/{{ msg.id }}" method="POST" id="like-form">
-          <button class="fas fa-heart mr-0" type="submit" id="like-button"></button>
+        <form action="/likes/{{ msg.id }}" class="like-form">
+          <button class="fas fa-heart mr-0 like-button" id="like-button-{{ msg.id }}" data-id="{{ msg.id }}"></button>
           <br>
           <span class="like-numbers">
             <p>{{ msg.users_who_like | length }}</p>
           </span>
         </form>
         {% else %}
-        <form action="/likes/{{ msg.id }}" method="POST" id="like-form">
-          <button class="far fa-heart mr-0" type="submit" id="like-button"></button>
+        <form action="/likes/{{ msg.id }}" class="like-form">
+          <button class="far fa-heart mr-0 like-button" id="like-button-{{ msg.id }}" data-id="{{ msg.id }}"></button>
           <br>
           <span class="like-numbers">
             <p>{{ msg.users_who_like | length }}</p>

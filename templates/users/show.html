@@ -19,14 +19,14 @@
             <p>{{ message.text }}</p>
           </div>
           {% if message.id in user_likes %}
-          <form action="/likes/{{ message.id }}" method="POST" id="like-form">
-            <button class="fas fa-heart mr-0" type="submit" id="like-button"></button>
+          <form action="/likes/{{ message.id }}" class="like-form">
+            <button class="fas fa-heart mr-0 like-button" id="like-button-{{ message.id }}" data-id="{{ message.id }}"></button>
             <br>
             <span class="like-numbers"><p>{{ message.users_who_like | length }}</p></span>
           </form>
           {% else %}
-          <form action="/likes/{{ message.id }}" method="POST" id="like-form">
-            <button class="far fa-heart mr-0" type="submit" id="like-button"></button>
+          <form action="/likes/{{ message.id }}" class="like-form">
+            <button class="far fa-heart mr-0 like-button" id="like-button-{{ message.id }}" data-id="{{ message.id }}" ></button>
             <br>
             <span class="like-numbers"><p>{{ message.users_who_like | length }}</p></span>
           </form>

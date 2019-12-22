@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request, flash, redirect, session, g
+from flask import Flask, render_template, request, flash, redirect, session, g, jsonify
 # from flask_admin import Admin
 # from flask_basicauth import BasicAuth
 from flask_login import LoginManager
@@ -395,19 +395,27 @@ def messages_destroy(message_id):
 @app.route('/likes/<int:message_id>', methods=["POST"])
 def like_message(message_id):
     """Like a message."""
-    if not g.user:
-        flash("Access unauthorized.", "danger")
-        return redirect("/")
+    # if not g.user:
+    #     flash("Access unauthorized.", "danger")
+    #     return redirect("/")
 
     try:
-        cur_message = Message.query.get(message_id)
-        if cur_message.user_id == g.user.id:
-            return redirect(request.referrer)
-        like = Like(msg_id=message_id, user_id=g.user.id)
-        db.session.add(like)
-        db.session.commit()
-        g_likes = [msg.id for msg in g.user.likes]
-        return redirect(request.referrer)
+        liked = Like.query.filter_by(msg_id=message_id, user_id=g.user.id).first()
+        # import pdb; pdb.set_trace()
+        if liked:
+            db.session.delete(liked)
+            db.session.commit()
+            return jsonify({"status": "DELETED"})
+        else:
+            like = Like(msg_id=message_id, user_id=g.user.id)
+            db.session.add(like)
+            db.session.commit()
+            return jsonify({"status": "OK"})
+
+        # cur_message = Message.query.get(message_id)
+        # if cur_message.user_id == g.user.id:
+        #     return redirect(request.referrer)
+        # g_likes = [msg.id for msg in g.user.likes]
 
     except (IntegrityError, InvalidRequestError):
         db.session.rollback()

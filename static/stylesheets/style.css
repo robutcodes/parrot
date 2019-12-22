@@ -402,7 +402,7 @@ p.card-location {
 }
 
 /* Like button styling */
-#like-button {
+.like-button {
   border: None;
   padding: 1em;
   background: None;
@@ -410,10 +410,6 @@ p.card-location {
   top: 0;
   right: 0;
   z-index: 10;
-}
-
-#like-form {
-  /* position: relative; */
 }
 
 .fas {
