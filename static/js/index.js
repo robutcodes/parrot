@@ -27,3 +27,13 @@ $body.on('click', '.fa-heart', function (e) {
 });
 
 
+$("#demo-login").on("click", function() {
+  let username = "patrickstar";
+  let password = "password";
+
+  $("#user_form input[name=username]").val(username);
+  $("#user_form input[name=password").val(password);
+    
+});
+
+
