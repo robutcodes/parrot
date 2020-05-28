@@ -1,9 +1,8 @@
 # React Jobly
 
-Jobly is a full-stack application based on indeed.com 
-The backend is built with node express and the frontend is built with React using a PostgreSQL database.
+Parrot is a full-stack application built with Python Flask.
 
-Jobly is live [here](https://parrot-warbler.herokuapp.com/)
+[Parrot is live here](https://parrot-warbler.herokuapp.com/)
 
 # Table of Contents
 - [Screenshots](#screenshots)
@@ -14,24 +13,13 @@ Jobly is live [here](https://parrot-warbler.herokuapp.com/)
 
 ## Setup
 
-This application has a separate backend and frontend. Below are instructions on how to install and start each server.
-### Backend
-cd into /backend and type these following commands:
+This is a monolithic application built using Python's Flask web server.
 
-```
-npm install
-node server.js
-```
-The backend should now be starting on `http://localhost:3001/`
+To start the application, type 
+`pip install -r requirements.txt`
 
-### Frontend
-cd into /frontend from the root directory and type the following commands:
-
-```
-npm install
-npm start
-```
-The frontend should now be starting on `http://localhost:3000/`
+then, run the following command: 
+`python flask run`
 
 ## Screenshots
 
