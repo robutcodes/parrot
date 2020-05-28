@@ -1,4 +1,4 @@
-# React Jobly
+# Parrot
 
 Parrot is a full-stack application built with Python Flask.
 
@@ -57,8 +57,3 @@ npm test
 
 - Infinite scrolling
 - Autocomplete search
-- Add animated SVG's to home-card
-- Add navlink for applied jobs
-- Add ability to add Company
-- Add ability to add Jobs
-- Flush out front-end tests
